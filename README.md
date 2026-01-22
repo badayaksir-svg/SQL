@@ -1,30 +1,89 @@
-University Database SQL Example
-This repository provides a simple example of a university database setup using MySQL. It includes SQL scripts for creating the database schema, inserting sample data, and verifying the data through a query. A Docker Compose configuration is provided to easily spin up a MySQL instance and initialize the database with the provided scripts.
-Purpose
-The project demonstrates basic database design for a university system, including tables for majors, students, courses, and enrollments. It's useful for learning SQL, database normalization, and Docker-based database deployment.
-Prerequisites
+# SQL University Database Project
 
-Docker and Docker Compose installed on your system.
+This repository contains a simple **University Database** project built using **MySQL**.  
+It is designed for learning and practicing **SQL**, **database design**, and **Docker-based database setup**.
 
-Setup and Usage
+---
 
-Clone the repository:textgit clone https://github.com/badayaksir-svg/SQL.git
+## 📌 Features
+
+- University database schema (students, courses, departments, enrollments, etc.)
+- Sample data for testing SQL queries
+- Verification queries to validate database structure and data
+- Docker & Docker Compose support for easy setup
+- Suitable for beginners and academic use
+
+---
+
+## 📁 Project Structure
+
+SQL/
+├── sql/
+│ ├── 01_schema.sql # Database tables and constraints
+│ ├── 02_data.sql # Sample data insertion
+│ └── 03_verify.sql # Verification queries
+├── docker-compose.yml # Docker configuration for MySQL
+└── README.md # Project documentation
+
+
+---
+
+## 🧰 Requirements
+
+- Docker  
+- Docker Compose  
+
+Make sure Docker is installed and running on your system.
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/badayaksir-svg/SQL.git
 cd SQL
-Start the MySQL container using Docker Compose:textdocker-compose up -dThis will:
-Pull the MySQL 8.0 image.
-Create a container named university_db.
-Map port 3303 on the host to 3306 in the container.
-Mount the ./sql directory to /docker-entrypoint-initdb.d in the container, which automatically executes the SQL scripts in alphabetical order (01_schema.sql, 02_data.sql, 03_verify.sql).
+2️⃣ Start MySQL Using Docker
+docker-compose up -d
+This will:
 
-Connect to the database:
-Use a MySQL client (e.g., MySQL Workbench, command-line mysql).
+Start a MySQL 8.0 container
+
+Create the university_db database
+
+Automatically run all SQL files in the sql/ folder
+
+🔐 Database Credentials
 Host: localhost
 Port: 3303
 Username: root
 Password: root
 Database: university_db
+You can connect using:
 
-Verify the data:
-Run the query from 03_verify.sql to see joined data from all tables.
+MySQL Workbench
 
-Stop the container:textdocker-compose down# SQL
+Command line
+
+VS Code SQL extensions
+
+✅ Verify the Database
+Run the queries in:
+
+sql/03_verify.sql
+These queries help confirm that tables and data are correctly created.
+
+🛑 Stop the Container
+docker-compose down
+📚 Learning Purpose
+This project is ideal for:
+
+SQL practice
+
+Database normalization
+
+Academic assignments
+
+Understanding Docker + MySQL integration
+
